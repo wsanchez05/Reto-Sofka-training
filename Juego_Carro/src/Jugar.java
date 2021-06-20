@@ -10,8 +10,10 @@ public class Jugar {
 		
 		configuracion confi =  new configuracion();
 		confi.info();
+		confi.iniciar_juego();
 		
 	}  
+	
 	
 	
 }

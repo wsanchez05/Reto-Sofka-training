@@ -5,6 +5,7 @@ import com.mysql.jdbc.PreparedStatement;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 import java.util.Scanner;
 
 public class configuracion 
@@ -101,7 +102,29 @@ public class configuracion
 		}
 		
 		}
+	public void iniciar_juego ()
+	{
+		List<Double> Km_jugador = new ArrayList<Double>();
+		System.out.println("Vamos a comenzar la carrera!! " );
+		double distancia_jugador;
+		for(int i=0; i<Cantidad_jugadores; i++) 
+		{
+			int n= i+1;
+			int Tecla_dado; 
+			System.out.println("Por favor lanzar dado jugador con ID N° " +n + " presionando cualquier tecla ");
+			Scanner Tecla =new Scanner(System.in);
+			Tecla_dado = new Random().nextInt(6)+1;
+			distancia_jugador = Tecla_dado * 100 + Km_jugador.get(i);
+			Km_jugador.add(i,distancia_jugador);
+			
+			
+			System.out.println("La distancia recorrida del jugador N: " + n + " es: \n " +Km_jugador.get(i));	
+						
+		}
+				
 		
+		
+	}
 
 	}
  
