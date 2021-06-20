@@ -107,17 +107,36 @@ public class configuracion
 		List<Double> Km_jugador = new ArrayList<Double>();
 		System.out.println("Vamos a comenzar la carrera!! " );
 		double distancia_jugador;
+		String letra;
+		Scanner tecla =new Scanner(System.in);
+		double Tecla_dado=0;
+		
+		for(int i=0; i<Cantidad_jugadores; i++) 
+		{
+			Km_jugador.add(i,0.0);
+			
+		}
 		for(int i=0; i<Cantidad_jugadores; i++) 
 		{
 			int n= i+1;
-			int Tecla_dado; 
-			System.out.println("Por favor lanzar dado jugador con ID N° " +n + " presionando cualquier tecla ");
-			Scanner Tecla =new Scanner(System.in);
-			Tecla_dado = new Random().nextInt(6)+1;
-			distancia_jugador = Tecla_dado * 100 + Km_jugador.get(i);
-			Km_jugador.add(i,distancia_jugador);
+			
+			System.out.println("Por favor lanzar dado jugador con ID N° " +n + " presionando la tecla l ");
 			
 			
+		    letra = tecla.next();
+			if(letra.equals("l"))
+			{
+				Tecla_dado = new Random().nextInt(6)+1;
+				distancia_jugador = (Tecla_dado * 100) + Km_jugador.get(i);
+				
+				Km_jugador.add(i,distancia_jugador);
+			}
+			else 
+			{
+				System.out.println("Debes ingresar la tecla n, pierdes el avance.");
+
+			}
+			System.out.println("Sacaste el numero: " + Tecla_dado);	
 			System.out.println("La distancia recorrida del jugador N: " + n + " es: \n " +Km_jugador.get(i));	
 						
 		}
