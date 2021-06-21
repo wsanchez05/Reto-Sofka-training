@@ -166,7 +166,7 @@ public class configuracion
 					
 					//boolean existe_ganador = n_ganadores.contains(i);
 					
-					if (Km_recorridos[i]>km)
+					if (Km_recorridos[i]>=km)
 					{
 						System.out.println("Ok");
 					}
@@ -231,7 +231,11 @@ public class configuracion
 						}
 					}
 
-					System.out.println("minimo de kilometros recorridos es: " +min);	
+					System.out.println("minimo de kilometros recorridos es: " +min);
+					for(int w=0; w<Cantidad_jugadores; w++) 
+					{
+					System.out.println("todos los kilometros recorridos son: " +Km_recorridos[w]);
+					}
 			}
 			System.out.println("El juego ha terminado \n" );
 		}
