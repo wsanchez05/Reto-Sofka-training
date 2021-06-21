@@ -26,9 +26,5 @@ public class Bd_conectar {
 		}
 		return conexion;
 	}
-	
-	public static void  main(String[] args) {
-		
-				
-	}  
+	  
 }
