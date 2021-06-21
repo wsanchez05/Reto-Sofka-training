@@ -5,22 +5,25 @@ import java.util.Scanner;
 public class Jugar {
 	
 	
-	public static void  main(String[] args) {
+	public static void  main(String[] args)
+	{
+		int en=1;
+		String name ="william";
+		String quedo = "primero";
 		Scanner ingreso =new Scanner(System.in);
 		String respuesta;
 		boolean seguir=true;
-		
-		
+		configuracion confi =  new configuracion();
+		Bd_conectar conectado = new Bd_conectar();
 		while (seguir)
 		{
-			
-			System.out.println("¡Hola!!");
+			conectado.conectarBd();							//conectar a la base de datos
+			System.out.println("¡Hola!!");					// se da la bienvenida al juego
 			System.out.println("Bienvenido al Juego");
-			
-			configuracion confi =  new configuracion();
-			confi.info();
-			confi.iniciar_juego();
-			confi.podio();
+
+			confi.info();									// llamado de funcion para pedir la informacion del juego
+			confi.iniciar_juego();							// se llama funcion para iniciar juego
+			confi.podio();									// se llama funcion para presentar el podio
 
 			System.out.println("¿Deseas volver a jugar? \n");
 			System.out.println("presione: \n S si desea \n N si no lo desea\n");
@@ -35,7 +38,11 @@ public class Jugar {
 				}
 			
 		}
-		
+		//for (int i=0; i<confi.Cantidad_jugadores;i++)
+		//{
+			confi.guardar_jugador(en, name, quedo);
+			System.out.println("guardando en base de datos......");
+		//}
 		
 	}  
 	

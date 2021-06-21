@@ -23,9 +23,10 @@ public class configuracion
 	List<Double> Carriles = new ArrayList<Double>();
 	List<Double> Carros = new ArrayList<Double>();
 	double [] Km_recorridos;
+	int num=0;
 	
 	// Se crea un Metodo para guardar los valores ingresados
-	public int guardar_jugador (int id, String Name, String apellido )
+	public int guardar_jugador (int id, String Name, String puesto )
 	{
 		int resultado = 0;
 		Bd_conectar BD =  new Bd_conectar();
@@ -36,8 +37,8 @@ public class configuracion
 			
 			java.sql.PreparedStatement Psql = BD.conexion.prepareStatement(SSQL);
 			Psql.setInt(1, id);
-			Psql.setString(1, Name);
-			Psql.setString(1, apellido);
+			Psql.setString(2, Name);
+			Psql.setString(3, puesto);
 			
 			resultado = Psql.executeUpdate();
 			Psql.close();
@@ -127,13 +128,14 @@ public class configuracion
 			
 		public void datos_jugadores()
 		{	
+			
 			for(int i=0; i<Cantidad_jugadores; i++) 
 			{
-				int n= i+1;
+				 num= i+1;
 				
-				System.out.println("Nombre del corredor con ID N° " +n+ ":\n "+ corredores[i]);
-				System.out.println("El carril del jugador N: " + n + " es: \n " +Carriles.get(i));	
-				System.out.println("El numero de  carro del jugador N: " + n + " es: \n " +Carros.get(i));	
+				System.out.println("Nombre del corredor con ID N° " +num+ ":\n "+ corredores[i]);
+				System.out.println("El carril del jugador N: " + num + " es: \n " +Carriles.get(i));	
+				System.out.println("El numero de  carro del jugador N: " + num + " es: \n " +Carros.get(i));	
 				
 			}
 		}
