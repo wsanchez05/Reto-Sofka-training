@@ -31,7 +31,7 @@ public class configuracion
 		int resultado = 0;
 		Bd_conectar BD =  new Bd_conectar();
 		BD.conectarBd(); 
-		String SSQL = "INTERT TO jugador(id, name, apellido) " + "values (?,?,?)";
+		String SSQL = "INSERT INTO jugador(id, name, apellido) " + "values (?,?,?)";
 		
 		try {
 			
@@ -189,7 +189,7 @@ public class configuracion
 							
 							
 						    letra = tecla.next();
-							if(letra.equals("l"))
+							if(letra.equalsIgnoreCase("l"))
 							{
 								Tecla_dado = new Random().nextInt(6)+1;
 								distancia_jugador = (Tecla_dado * 100) + Km_recorridos[i];
