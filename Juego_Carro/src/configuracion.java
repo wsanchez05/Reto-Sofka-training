@@ -169,6 +169,15 @@ public class configuracion
 					if (Km_recorridos[i]>=km)
 					{
 						System.out.println("Ok");
+						//se busca el jugador con el recorrido mas corto para que cuando se cumpla el limite se acabe el juego
+						if(i==0)
+						{
+						min=Km_recorridos[i];
+						}
+						else if(min>Km_recorridos[i])
+						{
+						min=Km_recorridos[i];
+						}
 					}
 					else
 					{
@@ -217,8 +226,6 @@ public class configuracion
 										System.out.println("Aun no hay ganador");
 									}
 							}
-						
-
 							//se busca el jugador con el recorrido mas corto para que cuando se cumpla el limite se acabe el juego
 							if(i==0)
 							{
@@ -227,8 +234,12 @@ public class configuracion
 							else if(min>Km_recorridos[i])
 							{
 							min=Km_recorridos[i];
-							}	
+							}
 						}
+					
+
+					
+					
 					}
 
 					System.out.println("minimo de kilometros recorridos es: " +min);
@@ -261,7 +272,6 @@ public class configuracion
 					System.out.println("HASTA PRONTO");
 				}
 		}
-
  }
 	
  
